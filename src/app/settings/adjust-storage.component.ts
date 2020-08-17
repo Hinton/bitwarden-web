@@ -26,8 +26,7 @@ export class AdjustStorageComponent {
     @Output() onAdjusted = new EventEmitter<number>();
     @Output() onCanceled = new EventEmitter();
 
-    @ViewChild(PaymentComponent, { static: true })
-    paymentComponent: PaymentComponent;
+    @ViewChild(PaymentComponent, { static: true }) paymentComponent: PaymentComponent;
 
     storageAdjustment = 0;
     formPromise: Promise<any>;
@@ -84,9 +83,7 @@ export class AdjustStorageComponent {
                     type: 'warning',
                     timeout: 10000,
                 });
-                this.router.navigate(['../billing'], {
-                    relativeTo: this.activatedRoute,
-                });
+                this.router.navigate(['../billing'], { relativeTo: this.activatedRoute });
             } else {
                 this.toasterService.popAsync(
                     'success',

@@ -10,17 +10,11 @@ import { PurgeVaultComponent } from './purge-vault.component';
     templateUrl: 'account.component.html',
 })
 export class AccountComponent {
-    @ViewChild('deauthorizeSessionsTemplate', {
-        read: ViewContainerRef,
-        static: true,
-    })
+    @ViewChild('deauthorizeSessionsTemplate', { read: ViewContainerRef, static: true })
     deauthModalRef: ViewContainerRef;
     @ViewChild('purgeVaultTemplate', { read: ViewContainerRef, static: true })
     purgeModalRef: ViewContainerRef;
-    @ViewChild('deleteAccountTemplate', {
-        read: ViewContainerRef,
-        static: true,
-    })
+    @ViewChild('deleteAccountTemplate', { read: ViewContainerRef, static: true })
     deleteModalRef: ViewContainerRef;
 
     private modal: ModalComponent = null;

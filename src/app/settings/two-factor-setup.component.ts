@@ -33,10 +33,7 @@ import { TwoFactorYubiKeyComponent } from './two-factor-yubikey.component';
 export class TwoFactorSetupComponent implements OnInit {
     @ViewChild('recoveryTemplate', { read: ViewContainerRef, static: true })
     recoveryModalRef: ViewContainerRef;
-    @ViewChild('authenticatorTemplate', {
-        read: ViewContainerRef,
-        static: true,
-    })
+    @ViewChild('authenticatorTemplate', { read: ViewContainerRef, static: true })
     authenticatorModalRef: ViewContainerRef;
     @ViewChild('yubikeyTemplate', { read: ViewContainerRef, static: true })
     yubikeyModalRef: ViewContainerRef;

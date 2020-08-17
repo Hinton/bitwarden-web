@@ -43,10 +43,8 @@ const BroadcasterSubscriptionId = 'VaultComponent';
     templateUrl: 'vault.component.html',
 })
 export class VaultComponent implements OnInit, OnDestroy {
-    @ViewChild(GroupingsComponent, { static: true })
-    groupingsComponent: GroupingsComponent;
-    @ViewChild(CiphersComponent, { static: true })
-    ciphersComponent: CiphersComponent;
+    @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
+    @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
     @ViewChild(OrganizationsComponent, { static: true })
     organizationsComponent: OrganizationsComponent;
     @ViewChild('attachments', { read: ViewContainerRef, static: true })
@@ -55,8 +53,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     folderAddEditModalRef: ViewContainerRef;
     @ViewChild('cipherAddEdit', { read: ViewContainerRef, static: true })
     cipherAddEditModalRef: ViewContainerRef;
-    @ViewChild('share', { read: ViewContainerRef, static: true })
-    shareModalRef: ViewContainerRef;
+    @ViewChild('share', { read: ViewContainerRef, static: true }) shareModalRef: ViewContainerRef;
     @ViewChild('collections', { read: ViewContainerRef, static: true })
     collectionsModalRef: ViewContainerRef;
     @ViewChild('updateKeyTemplate', { read: ViewContainerRef, static: true })

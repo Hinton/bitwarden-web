@@ -86,15 +86,11 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     async goAfterLogIn() {
         const invite = await this.stateService.get<any>('orgInvitation');
         if (invite != null) {
-            this.router.navigate(['accept-organization'], {
-                queryParams: invite,
-            });
+            this.router.navigate(['accept-organization'], { queryParams: invite });
         } else {
             const loginRedirect = await this.stateService.get<any>('loginRedirect');
             if (loginRedirect != null) {
-                this.router.navigate([loginRedirect.route], {
-                    queryParams: loginRedirect.qParams,
-                });
+                this.router.navigate([loginRedirect.route], { queryParams: loginRedirect.qParams });
                 await this.stateService.remove('loginRedirect');
             } else {
                 this.router.navigate([this.successRoute], {

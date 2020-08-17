@@ -38,10 +38,8 @@ const BroadcasterSubscriptionId = 'OrgVaultComponent';
     templateUrl: 'vault.component.html',
 })
 export class VaultComponent implements OnInit, OnDestroy {
-    @ViewChild(GroupingsComponent, { static: true })
-    groupingsComponent: GroupingsComponent;
-    @ViewChild(CiphersComponent, { static: true })
-    ciphersComponent: CiphersComponent;
+    @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
+    @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
     @ViewChild('attachments', { read: ViewContainerRef, static: true })
     attachmentsModalRef: ViewContainerRef;
     @ViewChild('cipherAddEdit', { read: ViewContainerRef, static: true })

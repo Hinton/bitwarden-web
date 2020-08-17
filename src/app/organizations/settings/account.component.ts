@@ -23,15 +23,9 @@ import { RotateApiKeyComponent } from './rotate-api-key.component';
     templateUrl: 'account.component.html',
 })
 export class AccountComponent {
-    @ViewChild('deleteOrganizationTemplate', {
-        read: ViewContainerRef,
-        static: true,
-    })
+    @ViewChild('deleteOrganizationTemplate', { read: ViewContainerRef, static: true })
     deleteModalRef: ViewContainerRef;
-    @ViewChild('purgeOrganizationTemplate', {
-        read: ViewContainerRef,
-        static: true,
-    })
+    @ViewChild('purgeOrganizationTemplate', { read: ViewContainerRef, static: true })
     purgeModalRef: ViewContainerRef;
     @ViewChild('apiKeyTemplate', { read: ViewContainerRef, static: true })
     apiKeyModalRef: ViewContainerRef;
@@ -82,9 +76,7 @@ export class AccountComponent {
                     return this.syncService.fullSync(true);
                 });
             await this.formPromise;
-            this.analytics.eventTrack.next({
-                action: 'Updated Organization Settings',
-            });
+            this.analytics.eventTrack.next({ action: 'Updated Organization Settings' });
             this.toasterService.popAsync(
                 'success',
                 null,
@@ -96,9 +88,7 @@ export class AccountComponent {
     async submitTaxInfo() {
         this.taxFormPromise = this.taxInfo.submitTaxInfo();
         await this.taxFormPromise;
-        this.analytics.eventTrack.next({
-            action: 'Updated Organization Tax Info',
-        });
+        this.analytics.eventTrack.next({ action: 'Updated Organization Tax Info' });
         this.toasterService.popAsync('success', null, this.i18nService.t('taxInfoUpdated'));
     }
 

@@ -24,8 +24,7 @@ export class AdjustSeatsComponent {
     @Output() onAdjusted = new EventEmitter<number>();
     @Output() onCanceled = new EventEmitter();
 
-    @ViewChild(PaymentComponent, { static: true })
-    paymentComponent: PaymentComponent;
+    @ViewChild(PaymentComponent, { static: true }) paymentComponent: PaymentComponent;
 
     seatAdjustment = 0;
     formPromise: Promise<any>;
@@ -66,9 +65,7 @@ export class AdjustSeatsComponent {
             };
             this.formPromise = action();
             await this.formPromise;
-            this.analytics.eventTrack.next({
-                action: this.add ? 'Added Seats' : 'Removed Seats',
-            });
+            this.analytics.eventTrack.next({ action: this.add ? 'Added Seats' : 'Removed Seats' });
             this.onAdjusted.emit(this.seatAdjustment);
             if (paymentFailed) {
                 this.toasterService.popAsync({
@@ -76,9 +73,7 @@ export class AdjustSeatsComponent {
                     type: 'warning',
                     timeout: 10000,
                 });
-                this.router.navigate(['../billing'], {
-                    relativeTo: this.activatedRoute,
-                });
+                this.router.navigate(['../billing'], { relativeTo: this.activatedRoute });
             } else {
                 this.toasterService.popAsync(
                     'success',
